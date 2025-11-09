@@ -1,4 +1,5 @@
 import pdfplumber
+import json
 #unité credit, matiere, coeff
 
 matierat = {
@@ -133,16 +134,11 @@ with pdfplumber.open("2.pdf") as pdf:
                 print(row)
                 if 'Sem.' in row:
                     continue
-                if ((notet["ex"] == None or notet["ds2"] == None) and notet["ds"] == None):
+                if (notet["ex"] == None and notet["ds"] == None):
                     s=str(row[3])
                     if row[5] and row[6]:
                         name,coef,credit=s.replace("\n", " "),float(row[5]),int(row[6])
                         notet["ds"] = (0 if row[8] == '' else float(row[8]))
-                if 'Ex (0.7)' in row:
-                    for i in range(len(row)):
-                        if row[i] == 'Ex (0.7)':
-                            break
-                    notet["ex"] = (0 if row[i+1] == '' else float(row[i+1]))
                 elif ('TP\n(0.15)' in row or 'TP (0.2)' in row or 'TP (0.15)' in row):
                     for i in range(len(row)):
                         if row[i] in ['TP\n(0.15)', 'TP (0.2)', 'TP (0.15)']:
@@ -153,12 +149,18 @@ with pdfplumber.open("2.pdf") as pdf:
                         if row[i] in ['Oral\n(0.2)', 'Oral (0.2)']:
                             break
                     notet["oral"] = (0 if row[i+1] == '' else float(row[i+1]))
+                elif 'Ex (0.7)' in row:
+                    for i in range(len(row)):
+                        if row[i] == 'Ex (0.7)':
+                            break
+                    notet["ex"] = (0 if row[i+1] == '' else float(row[i+1]))
                 elif 'DS (0.4)' in row and notet["ds"] != None:
                     for i in range(len(row)):
                         if row[i] == 'DS (0.4)':
                             break
                     notet["ds2"] = (0 if row[i+1] == '' else float(row[i+1]))
                 if notet["ex"] or notet["ds2"]:    
+                    
                     matiere = {
                         "name":name,
                         "coef":coef,
@@ -173,4 +175,5 @@ with pdfplumber.open("2.pdf") as pdf:
                         "ex": None,
                         "ds2": None
                     }
-print(matierat)
+with open('output.json', 'w', encoding='utf-8') as f:
+    json.dump(matierat,f,ensure_ascii=False, indent=4)

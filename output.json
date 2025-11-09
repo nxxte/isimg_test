@@ -1,0 +1,280 @@
+{
+    "matierat": [
+        {
+            "name": "Probabilité et statistique",
+            "coef": 2.0,
+            "credit": 4,
+            "notet": {
+                "ds": 3.5,
+                "tp": 14.0,
+                "oral": null,
+                "ex": 1.0,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Théorie des langages et des automates",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 10.0,
+                "tp": null,
+                "oral": null,
+                "ex": 11.0,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Graphes et optimisation",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 8.5,
+                "tp": null,
+                "oral": null,
+                "ex": 8.25,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Conception des systèmes d'information",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 10.25,
+                "tp": null,
+                "oral": null,
+                "ex": 13.25,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Programmation java",
+            "coef": 2.0,
+            "credit": 4,
+            "notet": {
+                "ds": 7.5,
+                "tp": 14.0,
+                "oral": null,
+                "ex": 10.5,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Ingénierie des bases de données",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 2.75,
+                "tp": 15.0,
+                "oral": null,
+                "ex": 0.25,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Services des réseaux",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 12.75,
+                "tp": 10.0,
+                "oral": null,
+                "ex": 2.5,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Anglais 3",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 15.5,
+                "tp": null,
+                "oral": 18.0,
+                "ex": null,
+                "ds2": 13.5
+            }
+        },
+        {
+            "name": "Gestion d'entreprise",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 14.0,
+                "tp": null,
+                "oral": 16.0,
+                "ex": null,
+                "ds2": 8.0
+            }
+        },
+        {
+            "name": "Web design",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 11.5,
+                "tp": 18.0,
+                "oral": null,
+                "ex": 8.5,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Animation 2d",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 15.5,
+                "tp": 18.5,
+                "oral": null,
+                "ex": 13.25,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Numérisation et codage des objets multimedia",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 13.5,
+                "tp": null,
+                "oral": null,
+                "ex": 10.5,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Traitement d'images numériques",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 15.5,
+                "tp": 10.5,
+                "oral": null,
+                "ex": 13.75,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Infographie",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 7.0,
+                "tp": 19.0,
+                "oral": null,
+                "ex": 12.5,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Technologies et programmation web",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 14.0,
+                "tp": 10.75,
+                "oral": null,
+                "ex": 12.5,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Développement d'applications mobiles",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 6.0,
+                "tp": 18.0,
+                "oral": null,
+                "ex": 9.0,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Fondements & programmation ia",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 11.0,
+                "tp": 15.0,
+                "oral": null,
+                "ex": 7.0,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Tests de logiciels (certification istqb)",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 14.75,
+                "tp": 12.0,
+                "oral": null,
+                "ex": 6.5,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Anglais 4",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 18.0,
+                "tp": null,
+                "oral": 17.0,
+                "ex": null,
+                "ds2": 15.0
+            }
+        },
+        {
+            "name": "Droit informatique, protection des données et éthique",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 11.5,
+                "tp": null,
+                "oral": 13.0,
+                "ex": null,
+                "ds2": 9.0
+            }
+        },
+        {
+            "name": "Projet féderé (méthodo agile)",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 13.5,
+                "tp": 13.0,
+                "oral": null,
+                "ex": null,
+                "ds2": 7.25
+            }
+        },
+        {
+            "name": "Architecture web",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 6.5,
+                "tp": 16.0,
+                "oral": null,
+                "ex": 12.5,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Développement cross- plateforme d'une application desktop",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 9.5,
+                "tp": 17.0,
+                "oral": null,
+                "ex": 12.5,
+                "ds2": null
+            }
+        }
+    ]
+}
