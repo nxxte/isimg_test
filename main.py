@@ -126,7 +126,7 @@ notet = {
     "ex": None,
     "ds2": None
 }
-with pdfplumber.open("2.pdf") as pdf:
+with pdfplumber.open("pdfs/3.pdf") as pdf:
     for page in pdf.pages:
         tables = page.extract_tables()
         for table in tables:
@@ -134,7 +134,7 @@ with pdfplumber.open("2.pdf") as pdf:
                 print(row)
                 if 'Sem.' in row:
                     continue
-                if (notet["ex"] == None and notet["ds"] == None):
+'''                if (notet["ex"] == None and notet["ds"] == None):
                     s=str(row[3])
                     if row[5] and row[6]:
                         name,coef,credit=s.replace("\n", " "),float(row[5]),int(row[6])
@@ -176,4 +176,4 @@ with pdfplumber.open("2.pdf") as pdf:
                         "ds2": None
                     }
 with open('output.json', 'w', encoding='utf-8') as f:
-    json.dump(matierat,f,ensure_ascii=False, indent=4)
+    json.dump(matierat,f,ensure_ascii=False, indent=4)'''

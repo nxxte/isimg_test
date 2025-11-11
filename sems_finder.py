@@ -1,18 +1,50 @@
+import fitz  # PyMuPDF
+import os
 import easyocr
 from PIL import Image
 import numpy as np
 
-img = 'page_2_pymupdf_output.png' 
-out_txt = 'extracted_matiere.txt'
-out_img_crop = 'cropped_matiere_area.png' 
-target = '2'
+def convert_specific_page_to_image(pdf_path, output_path, page_num):
+    if not os.path.exists(pdf_path):
+        print(f"Error: PDF file '{pdf_path}' not found.")
+        return
 
-start_x = 800 
-x_end = 1130 
+    page_index = page_num - 1 
 
-reader = easyocr.Reader(['fr'])
+    try:
+        doc = fitz.open(pdf_path)
+        
+        if page_index < 0 or page_index >= len(doc):
+            print(f"Error: PDF only has {len(doc)} pages. Cannot access page {page_num}.")
+            doc.close()
+            return
+        
+        page = doc.load_page(page_index)
+        
+        zoom = 300 / 72
+        matrix = fitz.Matrix(zoom, zoom)
+        
+        pix = page.get_pixmap(matrix=matrix, alpha=False)
+        
+        pix.save(output_path)
+
+        doc.close()
+        
+        print("\n--- Conversion SUCCESS ---")
+        print(f"Page {page_num} successfully converted and saved as: {output_path}")
+
+    except Exception as e:
+        print("\n--- Conversion FAILURE ---")
+        print(f"An unexpected error occurred: {e}")
 
 def extract_matiere(image_path, target_char):
+    out_txt = 'extracted_matiere.txt'
+    out_img_crop = 'cropped_matiere_area.png'
+
+    start_x = 800 
+    x_end = 1130 
+
+    reader = easyocr.Reader(['fr'])
     try:
         img = Image.open(image_path)
         img_height = img.size[1]
@@ -80,5 +112,14 @@ def extract_matiere(image_path, target_char):
         print(f"Error: The image file '{image_path}' was not found.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
+pdf = 'pdfs/2.pdf'
+out_img = 'page_2_pymupdf_output.png'
+num_page = 2
+
+convert_specific_page_to_image(pdf, out_img, num_page)
+
+img = 'page_2_pymupdf_output.png'  
+target = '2'
 
 extract_matiere(img, target)
