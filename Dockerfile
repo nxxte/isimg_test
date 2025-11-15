@@ -2,14 +2,11 @@
 FROM python:3.11-slim
 
 # 1. Install Tesseract OCR and its required libraries
-RUN apt-get update && \
-    apt-get install -y tesseract-ocr \
-                       libtesseract-dev \
-                       libleptonica-dev \
-                       pkg-config \
-                       poppler-utils \
-                       tesseract-ocr-fra \  
-    # Clean up APT cache to reduce image size
+RUN apt-get update && apt-get install -y \
+    tesseract-ocr \
+    tesseract-ocr-fra \
+    libgl1 \
+    libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
 # 2. Set the working directory inside the container
