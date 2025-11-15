@@ -1,84 +1,116 @@
-import easyocr
 from PIL import Image
-import numpy as np
-
-img = 'page_2_pymupdf_output.png' 
-out_txt = 'extracted_matiere.txt'
-out_img_crop = 'cropped_matiere_area.png' 
-target = '2'
-
-start_x = 800 
-x_end = 1130 
-
-reader = easyocr.Reader(['fr'])
+import pytesseract
 
 def extract_matiere(image_path, target_char):
+    out_txt = 'extracted_matiere.txt'
+    out_img_crop = 'cropped_matiere_area.png'
+
+    start_x = 800
+    x_end = 1200
+
     try:
+        # Load image
         img = Image.open(image_path)
-        img_height = img.size[1]
+        img_width, img_height = img.size
         
-        print("1. Running initial OCR to find the vertical bounds of the target row...")
-        results = reader.readtext(image_path, detail=1)
+        print("1. Running OCR to find the vertical bounds of the target row...")
+        
+        # Run OCR directly on original image - no preprocessing
+        data = pytesseract.image_to_data(
+            img, 
+            output_type=pytesseract.Output.DICT,
+            lang='fra'
+        )
         
         y_min_of_two = -1
         y_max_of_two = -1
-
-        limit_x = 200
+        limit_x = 300
         
-        for (bbox, text, prob) in results:
-            if target_char in text and bbox[0][0] < start_x and \
-                bbox[0][0] < limit_x:
+        print("\n=== DEBUG: All detected text in leftmost area ===")
+        for i, text in enumerate(data['text']):
+            text_stripped = text.strip()
+            if text_stripped and data['left'][i] < limit_x:
+                x = data['left'][i]
+                y = data['top'][i]
+                conf = data['conf'][i]
+                print(f"  Text: '{text_stripped}' at X={x}, Y={y}, Confidence={conf}")
+        
+        print("\n=== Searching for target ===")
+        for i, text in enumerate(data['text']):
+            text_stripped = text.strip()
+            if text_stripped == target_char and data['left'][i] < limit_x:
+                y_min_of_two = data['top'][i]
+                y_max_of_two = data['top'][i] + data['height'][i]
                 
-                all_y_coords = [point[1] for point in bbox]
-                
-                y_min_of_two = min(all_y_coords) 
-                y_max_of_two = max(all_y_coords)
-                
-                print(f"2. Found '{target_char}' bounding box (Y-range: {y_min_of_two:.0f} to {y_max_of_two:.0f}).")
+                print(f"✓ Found '{target_char}' at X={data['left'][i]}, Y={y_min_of_two}")
+                print(f"  Bounding box (Y-range: {y_min_of_two:.0f} to {y_max_of_two:.0f})")
                 break
                 
-        if y_min_of_two != -1:
-            vsb = 5 #vertical start buffer
-            y_min_crop = max(0, int(y_min_of_two) - vsb) 
+        if y_min_of_two == -1:
+            print(f"\nERROR: OCR could not detect '{target_char}' in the Sem. column.")
+            print("Trying alternative approach - isolated Sem. column...")
             
-            veb = 150
-            y_max_crop = min(img_height, int(y_max_of_two) + veb)
+            # FALLBACK: Crop just the Sem. column and try OCR on it
+            sem_crop = img.crop((0, 0, limit_x, img_height))
+            sem_crop.save('debug_sem_column.png')
             
-            crop_area = (start_x, y_min_crop, x_end, y_max_crop)
+            sem_data = pytesseract.image_to_data(
+                sem_crop,
+                output_type=pytesseract.Output.DICT,
+                lang='fra'
+            )
             
-            print(f"3. Cropping region: {crop_area}")
-            
-            cropped_img = img.crop(crop_area)
-            cropped_img.save(out_img_crop)
-            print(f"   (Saved cropped area to {out_img_crop} for visual check.)")
+            print("\n=== Trying OCR on isolated Sem. column ===")
+            for i, text in enumerate(sem_data['text']):
+                text_stripped = text.strip()
+                if text_stripped:
+                    print(f"  Text: '{text_stripped}' at Y={sem_data['top'][i]}, Conf={sem_data['conf'][i]}")
+                    if text_stripped == target_char:
+                        y_min_of_two = sem_data['top'][i]
+                        y_max_of_two = sem_data['top'][i] + sem_data['height'][i]
+                        print(f"✓ Found '{target_char}' in isolated column!")
+                        break
+        
+        if y_min_of_two == -1:
+            print("\nFAILURE: Could not detect the target character with OCR.")
+            return None
+                
+        # Crop and extract
+        vsb = 5
+        y_min_crop = max(0, int(y_min_of_two) - vsb) 
+        
+        veb = 200
+        y_max_crop = min(img_height, int(y_max_of_two) + veb)
+        
+        crop_area = (start_x, y_min_crop, x_end, y_max_crop)
+        
+        print(f"\n2. Cropping region: {crop_area}")
+        
+        cropped_img = img.crop(crop_area)
+        cropped_img.save(out_img_crop)
+        print(f"   Saved cropped area to {out_img_crop}")
+        
+        print("3. Running OCR on the cropped Matière column...")
+        extracted_text = pytesseract.image_to_string(cropped_img, lang='fra').strip()
 
-            cropped_img_np = np.array(cropped_img) 
+        if extracted_text:
+            with open(out_txt, 'w', encoding='utf-8') as f:
+                f.write(extracted_text)
             
-            print("4. Running second OCR on the cropped Matière column...")
-            cropped_results = reader.readtext(cropped_img_np, detail=0) 
-            
-            extracted_text = ""
-
-            if cropped_results:
-                extracted_text = " ".join(cropped_results).strip()
-
-                with open(out_txt, 'w', encoding='utf-8') as f:
-                    f.write(extracted_text)
-
-                print("\n--- Extraction SUCCESS ---")
-                print(f"The Matière corresponding to the start of index '{target}' is:")
-                print(f"**{extracted_text}**")
-                print(f"Saved text to: {out_txt}")
-            else:
-                 print("\n--- Extraction FAILURE ---")
-                 print("ERROR: Second OCR run on the cropped area found NO text. Check cropped_matiere_area.png.")
-
+            print("\n--- Extraction SUCCESS ---")
+            print(f"Matières for semester '{target_char}':")
+            print(f"\n{extracted_text}")
+            print(f"\nSaved to: {out_txt}")
+            return extracted_text
         else:
-            print(f"Character '{target_char}' not found in the image or is outside the expected X-range.")
+            print("\n--- No text extracted from cropped area ---")
+            return None
 
-    except FileNotFoundError:
-        print(f"Error: The image file '{image_path}' was not found.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+        import traceback
+        traceback.print_exc()
+        return None
 
-extract_matiere(img, target)
+# Usage
+result = extract_matiere('page_2_pymupdf_output.png', '2')

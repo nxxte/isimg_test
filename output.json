@@ -1,372 +1,30 @@
 {
-    "matierat": [
+    "matierat1": [
         {
-            "name": "Mathématiques de l'ingénieur",
-            "coef": 1.5,
-            "credit": 3,
+            "name": "Probabilité et statistique",
+            "coef": 2.0,
+            "credit": 4,
             "notet": {
-                "ds": 9.0,
-                "tp": null,
+                "ds": 3.5,
+                "tp": 14.0,
                 "oral": null,
-                "ex": 10.5,
+                "ex": 1.0,
                 "ds2": null
             },
             "coeff": {
-                "ds": 0.3,
-                "tp": null,
+                "ds": 0.15,
+                "tp": 0.15,
                 "oral": null,
                 "ex": 0.7,
                 "ds2": null
             }
         },
         {
-            "name": "Recherche opérationnelle",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 15.5,
-                "tp": 15.0,
-                "oral": null,
-                "ex": 13.5,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Electronique analogique",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 20.0,
-                "tp": 17.0,
-                "oral": null,
-                "ex": 16.0,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Architecture avancée des processeurs",
-            "coef": 1.5,
-            "credit": 3,
-            "notet": {
-                "ds": 13.25,
-                "tp": 20.0,
-                "oral": null,
-                "ex": 10.5,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Synthèse vhdl des systèmes embarqués",
-            "coef": 1.5,
-            "credit": 3,
-            "notet": {
-                "ds": null,
-                "tp": 17.0,
-                "oral": null,
-                "ex": null,
-                "ds2": 19.5
-            },
-            "coeff": {
-                "ds": null,
-                "tp": 0.5,
-                "oral": null,
-                "ex": null,
-                "ds2": 0.5
-            }
-        },
-        {
-            "name": "Administration des bases de données",
-            "coef": 1.5,
-            "credit": 3,
-            "notet": {
-                "ds": 12.0,
-                "tp": 16.5,
-                "oral": null,
-                "ex": 14.0,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Programmation et administration système",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 11.0,
-                "tp": 16.0,
-                "oral": null,
-                "ex": 10.5,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Réseaux ip",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 16.0,
-                "tp": 16.5,
-                "oral": null,
-                "ex": 14.5,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Télécommunication analogiques et numériques",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 4.0,
-                "tp": null,
-                "oral": null,
-                "ex": 17.5,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.3,
-                "tp": null,
-                "oral": null,
-                "ex": 0.7,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Anglais TOEIC1 Skills Building",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 11.5,
-                "tp": null,
-                "oral": 18.5,
-                "ex": null,
-                "ds2": 12.5
-            },
-            "coeff": {
-                "ds": 0.4,
-                "tp": null,
-                "oral": 0.2,
-                "ex": null,
-                "ds2": 0.4
-            }
-        },
-        {
-            "name": "Techniques de communication 1",
+            "name": "Théorie des langages et des automates",
             "coef": 1.0,
             "credit": 2,
             "notet": {
                 "ds": 10.0,
-                "tp": null,
-                "oral": 16.0,
-                "ex": null,
-                "ds2": 10.0
-            },
-            "coeff": {
-                "ds": 0.4,
-                "tp": null,
-                "oral": 0.2,
-                "ex": null,
-                "ds2": 0.4
-            }
-        },
-        {
-            "name": "Traitement du signal numérique",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 9.5,
-                "tp": 18.0,
-                "oral": null,
-                "ex": 10.5,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Programmation python avancée",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": null,
-                "tp": 16.0,
-                "oral": null,
-                "ex": null,
-                "ds2": 15.5
-            },
-            "coeff": {
-                "ds": null,
-                "tp": 0.5,
-                "oral": null,
-                "ex": null,
-                "ds2": 0.5
-            }
-        },
-        {
-            "name": "Modélisation de systèmes complexes",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 7.5,
-                "tp": null,
-                "oral": null,
-                "ex": 15.25,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.3,
-                "tp": null,
-                "oral": null,
-                "ex": 0.7,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Optimisation heuristique et méta- heuristique",
-            "coef": 1.5,
-            "credit": 3,
-            "notet": {
-                "ds": 12.0,
-                "tp": 17.5,
-                "oral": null,
-                "ex": 14.0,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Architecture des systèmes d'information",
-            "coef": 1.5,
-            "credit": 3,
-            "notet": {
-                "ds": 11.0,
-                "tp": 17.0,
-                "oral": null,
-                "ex": 13.0,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Systèmes et applications réparties",
-            "coef": 1.5,
-            "credit": 3,
-            "notet": {
-                "ds": 15.0,
-                "tp": 13.0,
-                "oral": null,
-                "ex": 15.0,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Programmation C embarquée ( STM32-CMSIS)",
-            "coef": 1.5,
-            "credit": 3,
-            "notet": {
-                "ds": null,
-                "tp": 17.0,
-                "oral": null,
-                "ex": null,
-                "ds2": 12.25
-            },
-            "coeff": {
-                "ds": null,
-                "tp": 0.5,
-                "oral": null,
-                "ex": null,
-                "ds2": 0.5
-            }
-        },
-        {
-            "name": "Java avancé",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 13.5,
-                "tp": 12.5,
-                "oral": null,
-                "ex": 12.0,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Electronique de puissance embarquée",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 15.0,
                 "tp": null,
                 "oral": null,
                 "ex": 11.0,
@@ -381,53 +39,110 @@
             }
         },
         {
-            "name": "Architecture SOC",
+            "name": "Graphes et optimisation",
             "coef": 1.0,
             "credit": 2,
             "notet": {
-                "ds": 14.0,
-                "tp": 16.5,
-                "oral": null,
-                "ex": 17.0,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Electronique numérique avancée",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 12.0,
-                "tp": 12.0,
-                "oral": null,
-                "ex": 14.0,
-                "ds2": null
-            },
-            "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
-                "oral": null,
-                "ex": 0.6,
-                "ds2": null
-            }
-        },
-        {
-            "name": "Anglais TOEIC2",
-            "coef": 1.0,
-            "credit": 2,
-            "notet": {
-                "ds": 7.25,
+                "ds": 8.5,
                 "tp": null,
-                "oral": 17.5,
+                "oral": null,
+                "ex": 8.25,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.3,
+                "tp": null,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Conception des systèmes d'information",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 10.25,
+                "tp": null,
+                "oral": null,
+                "ex": 13.25,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.3,
+                "tp": null,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Programmation java",
+            "coef": 2.0,
+            "credit": 4,
+            "notet": {
+                "ds": 7.5,
+                "tp": 14.0,
+                "oral": null,
+                "ex": 10.5,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Ingénierie des bases de données",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 2.75,
+                "tp": 15.0,
+                "oral": null,
+                "ex": 0.25,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Services des réseaux",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 12.75,
+                "tp": 10.0,
+                "oral": null,
+                "ex": 2.5,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Anglais 3",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 15.5,
+                "tp": null,
+                "oral": 18.0,
                 "ex": null,
-                "ds2": 12.0
+                "ds2": 13.5
             },
             "coeff": {
                 "ds": 0.4,
@@ -438,15 +153,226 @@
             }
         },
         {
-            "name": "Français 2 : préparation DELF",
+            "name": "Gestion d'entreprise",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 14.0,
+                "tp": null,
+                "oral": 16.0,
+                "ex": null,
+                "ds2": 8.0
+            },
+            "coeff": {
+                "ds": 0.4,
+                "tp": null,
+                "oral": 0.2,
+                "ex": null,
+                "ds2": 0.4
+            }
+        },
+        {
+            "name": "Web design",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 11.5,
+                "tp": 18.0,
+                "oral": null,
+                "ex": 8.5,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Animation 2d",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 15.5,
+                "tp": 18.5,
+                "oral": null,
+                "ex": 13.25,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        }
+    ],
+    "matierat2": [
+        {
+            "name": "Numérisation et codage des objets multimedia",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 13.5,
+                "tp": null,
+                "oral": null,
+                "ex": 10.5,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.3,
+                "tp": null,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Traitement d'images numériques",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 15.5,
+                "tp": 10.5,
+                "oral": null,
+                "ex": 13.75,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Infographie",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 7.0,
+                "tp": 19.0,
+                "oral": null,
+                "ex": 12.5,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Technologies et programmation web",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 14.0,
+                "tp": 10.75,
+                "oral": null,
+                "ex": 12.5,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Développement d'applications mobiles",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 6.0,
+                "tp": 18.0,
+                "oral": null,
+                "ex": 9.0,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Fondements & programmation ia",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 11.0,
+                "tp": 15.0,
+                "oral": null,
+                "ex": 7.0,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Tests de logiciels (certification istqb)",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 14.75,
+                "tp": 12.0,
+                "oral": null,
+                "ex": 6.5,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Anglais 4",
+            "coef": 1.0,
+            "credit": 2,
+            "notet": {
+                "ds": 18.0,
+                "tp": null,
+                "oral": 17.0,
+                "ex": null,
+                "ds2": 15.0
+            },
+            "coeff": {
+                "ds": 0.4,
+                "tp": null,
+                "oral": 0.2,
+                "ex": null,
+                "ds2": 0.4
+            }
+        },
+        {
+            "name": "Droit informatique, protection des données et éthique",
             "coef": 1.0,
             "credit": 2,
             "notet": {
                 "ds": 11.5,
                 "tp": null,
-                "oral": 16.0,
+                "oral": 13.0,
                 "ex": null,
-                "ds2": 10.0
+                "ds2": 9.0
             },
             "coeff": {
                 "ds": 0.4,
@@ -457,40 +383,59 @@
             }
         },
         {
-            "name": "Processus agile unifié de développement",
+            "name": "Projet féderé (méthodo agile)",
             "coef": 1.0,
             "credit": 2,
             "notet": {
-                "ds": 17.5,
-                "tp": null,
+                "ds": 13.5,
+                "tp": 13.0,
                 "oral": null,
                 "ex": null,
-                "ds2": 7.75
+                "ds2": 7.25
             },
             "coeff": {
-                "ds": 0.5,
-                "tp": null,
+                "ds": 0.4,
+                "tp": 0.2,
                 "oral": null,
                 "ex": null,
-                "ds2": 0.5
+                "ds2": 0.4
             }
         },
         {
-            "name": "Tests de logiciels (Certification ISTQB)",
-            "coef": 1.0,
-            "credit": 2,
+            "name": "Architecture web",
+            "coef": 1.5,
+            "credit": 3,
             "notet": {
-                "ds": 14.0,
-                "tp": 15.0,
+                "ds": 6.5,
+                "tp": 16.0,
                 "oral": null,
-                "ex": 15.0,
+                "ex": 12.5,
                 "ds2": null
             },
             "coeff": {
-                "ds": 0.2,
-                "tp": 0.2,
+                "ds": 0.15,
+                "tp": 0.15,
                 "oral": null,
-                "ex": 0.6,
+                "ex": 0.7,
+                "ds2": null
+            }
+        },
+        {
+            "name": "Développement cross- plateforme d'une application desktop",
+            "coef": 1.5,
+            "credit": 3,
+            "notet": {
+                "ds": 9.5,
+                "tp": 17.0,
+                "oral": null,
+                "ex": 12.5,
+                "ds2": null
+            },
+            "coeff": {
+                "ds": 0.15,
+                "tp": 0.15,
+                "oral": null,
+                "ex": 0.7,
                 "ds2": null
             }
         }
