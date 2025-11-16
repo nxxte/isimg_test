@@ -1,4 +1,6 @@
 {
+    "filiere": "Licence en Sciences de l’Informatique (parcours : Informatique et Multimédia)",
+    "niveau": "2",
     "matierat1": [
         {
             "name": "Probabilité et statistique",

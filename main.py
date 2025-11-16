@@ -6,6 +6,7 @@ import numpy as np
 from PIL import Image, ImageEnhance, ImageFilter
 import pytesseract
 import cv2
+import re
 
 def convert_specific_page_to_image(pdf_path, output_path, page_num):
     if not os.path.exists(pdf_path):
@@ -176,19 +177,45 @@ def extract_matiere(image_path, target_char):
         traceback.print_exc()
         return None
 
+def extract_filiere_niveau(img_name):
+    try:
+        img = Image.open(img_name)
+        img_width, img_height = img.size
+        
+        header = img.crop((100, 500, img_width-500, 700))
+        header.save('debug_header_crop.png')
+        
+        text = pytesseract.image_to_string(header, lang='fra')
+        
+        filiere_match = re.search(r'Filière\s*:\s*(.+?)(?=\n|Niveau)', text, re.IGNORECASE | re.DOTALL)
+        filiere = ' '.join(filiere_match.group(1).strip().split()) if filiere_match else None
+        
+        niveau_match = re.search(r'Niveau\s*:\s*(\d+)', text, re.IGNORECASE)
+        niveau = niveau_match.group(1) if niveau_match else None
+        
+        return filiere, niveau
+        
+    except Exception as e:
+        print(f"Error: {e}")
+        return None, None
+
 pdf = 'pdfs/2.pdf'
 out_img = 'page_2_pymupdf_output.png'
 num_page = 2
 
 convert_specific_page_to_image(pdf, out_img, num_page)
+convert_specific_page_to_image(pdf,'page_1.png',1)
 
 img = 'page_2_pymupdf_output.png'  
 target = '2'
 
+filiere, niveau = extract_filiere_niveau("page_1.png")
+print(niveau,filiere)
 sem = extract_matiere(img, target)
 
-
 matierat = {
+    "filiere": filiere,
+    "niveau": niveau,
     "matierat1": [],
     "matierat2": []
 }
