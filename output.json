@@ -1,7 +1,7 @@
 {
     "filiere": "Licence en Sciences de l’Informatique (parcours : Informatique et Multimédia)",
     "niveau": "2",
-    "matierat1": [
+    "sem1": [
         {
             "name": "Probabilité et statistique",
             "coef": 2.0,
@@ -212,7 +212,7 @@
             }
         }
     ],
-    "matierat2": [
+    "sem2": [
         {
             "name": "Numérisation et codage des objets multimedia",
             "coef": 1.0,

@@ -216,8 +216,8 @@ sem = extract_matiere(img, target)
 matierat = {
     "filiere": filiere,
     "niveau": niveau,
-    "matierat1": [],
-    "matierat2": []
+    "sem1": [],
+    "sem2": []
 }
 
 def find_substring_in_row(row, x):
@@ -301,7 +301,7 @@ with pdfplumber.open("pdfs/2.pdf") as pdf:
                         "notet": notet,
                         "coeff": coeff
                     }
-                    matierat[f"matierat{z}"].append(matiere)
+                    matierat[f"sem{z}"].append(matiere)
                     notet = {
                         "ds": None,
                         "tp": None,
